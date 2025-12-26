@@ -1,0 +1,242 @@
+/* ===================================================
+   Calculator with History - Stylesheet
+   Author: Indra Chand
+   Description: Beautiful dark theme calculator styling
+   =================================================== */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Calculator card */
+.calculator {
+    background: linear-gradient(145deg, #1e2a4a, #16213e);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Title */
+.title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Display screen */
+.display {
+    margin-bottom: 20px;
+}
+
+.display input {
+    width: 100%;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: right;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #0d1b2a, #1b263b);
+    color: #00fff5;
+    box-shadow: 
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+    font-family: 'Courier New', monospace;
+}
+
+.display input::placeholder {
+    color: #4a5568;
+}
+
+/* Buttons grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Base button style */
+.btn {
+    padding: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Number buttons */
+.btn.number {
+    background: linear-gradient(145deg, #2d3748, #1a202c);
+    color: #fff;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.3),
+        -2px -2px 5px rgba(255, 255, 255, 0.05);
+}
+
+.btn.number:hover {
+    background: linear-gradient(145deg, #3d4758, #2a303c);
+}
+
+/* Zero button - spans 2 columns */
+.btn.zero {
+    grid-column: span 2;
+}
+
+/* Operator buttons */
+.btn.operator {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    color: #fff;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(231, 76, 60, 0.3);
+}
+
+.btn.operator:hover {
+    background: linear-gradient(145deg, #ff5f4f, #d0493b);
+}
+
+/* Special buttons (C, backspace, %) */
+.btn.special {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: #fff;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(52, 152, 219, 0.3);
+}
+
+.btn.special:hover {
+    background: linear-gradient(145deg, #44a8eb, #3990c9);
+}
+
+/* Equals button */
+.btn.equals {
+    background: linear-gradient(145deg, #27ae60, #1e8449);
+    color: #fff;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(39, 174, 96, 0.3);
+}
+
+.btn.equals:hover {
+    background: linear-gradient(145deg, #37be70, #2e9459);
+}
+
+/* History panel */
+.history-panel {
+    background: linear-gradient(145deg, #1e2a4a, #16213e);
+    border-radius: 20px;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.history-header h2 {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.clear-btn {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* History list */
+#history-list {
+    list-style: none;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#history-list li {
+    background: linear-gradient(145deg, #0d1b2a, #1b263b);
+    color: #00fff5;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar */
+#history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#history-list::-webkit-scrollbar-track {
+    background: #1a202c;
+    border-radius: 3px;
+}
+
+#history-list::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 3px;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .history-panel {
+        width: 100%;
+        max-width: 320px;
+    }
+}
